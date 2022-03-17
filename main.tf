@@ -131,7 +131,7 @@ resource "aws_cloudfront_distribution" "default" {
 resource "aws_route53_record" "regere_ui_record" {
   name    = var.DOMAIN_NAME
   type    = "A"
-  zone_id = var.AWS_ZONE_ID
+  zone_id = var.AWS_ROUTE53_ZONE_ID
 
   alias {
     evaluate_target_health = true
