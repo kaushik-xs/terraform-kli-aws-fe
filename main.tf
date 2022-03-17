@@ -1,5 +1,9 @@
+resource "random_integer" "default" {
+  min     = 10001
+  max     = 99999
+}
 resource "aws_s3_bucket" "default" {
-  bucket = var.AWS_BUCKET_NAME
+  bucket = "${var.AWS_BUCKET_NAME}-${random_integer.default.result}"
 }
 
 resource "aws_acm_certificate" "default" {
