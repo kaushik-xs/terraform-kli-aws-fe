@@ -132,7 +132,7 @@ resource "aws_cloudfront_distribution" "default" {
 
 
 
-resource "aws_route53_record" "regere_ui_record" {
+resource "aws_route53_record" "default" {
   name    = var.DOMAIN_NAME
   type    = "A"
   zone_id = var.AWS_ROUTE53_ZONE_ID
