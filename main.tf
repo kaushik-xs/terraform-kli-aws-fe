@@ -9,6 +9,10 @@ resource "aws_s3_bucket" "default" {
 resource "aws_acm_certificate" "default" {
   domain_name       = var.DOMAIN_NAME
   validation_method = "DNS"
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_route53_record" "default" {
